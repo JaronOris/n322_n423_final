@@ -1,0 +1,48 @@
+#navbar {
+    width: 100vw;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    font-family: Caveat;
+    font-size: 22pt;
+    background-color: #F9D949;
+}
+
+.logo img {
+    width: 200px;
+    height: 65px;
+    margin-left: 50px;
+}
+
+
+.links {
+    width: 600px;
+    margin-right: 50px;
+}
+
+.links ul {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #3C486B
+}
+
+.button {
+    width: 125px;
+    height: fit-content;
+    font-family: Caveat;
+    font-size: 22pt;
+    background-color: #3C486B;
+    color: #ffffff;
+    border: none;
+    border-radius: 100px;
+}
+
+.divider {
+    font-weight: 900;
+}
