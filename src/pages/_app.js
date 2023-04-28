@@ -1,11 +1,11 @@
 import Link from 'next/link';
+import { useRouter } from "next/router";
 import '@/styles/globals.css';
 import NavStyle from "../styles/Navbar.module.css";
 import HomeStyle from "../styles/Home.module.css";
 
 
 export default function App({ Component, pageProps }) {
-
   return (
     <>
       <nav id={NavStyle.navbar}>
@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }) {
               <Link href="/frontPage">Front Page</Link>
             </li> <span className={NavStyle.divider}>|</span>
             <li>
-              <Link href="/posts">Posts</Link>
+              <Link href="/userPosts">Posts</Link>
             </li> <span className={NavStyle.divider}>|</span>
             <button className={NavStyle.button}>Login</button>
           </ul>

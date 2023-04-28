@@ -1,0 +1,49 @@
+.userPostsContainer {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+  
+  .callout {
+    font-family: Caveat;
+    font-size: 40pt;
+    margin: 0 auto;
+    margin-top: 75px;
+  }
+
+  .createNew {
+    width: 300px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3c486b;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+
+  .newCallout {
+    font-family: Caveat;
+    font-size: 25pt;
+    color: white;
+  }
+
+  .plusHorizontal {
+    width: 10px;
+    height: 70px;
+    transform: rotate(90deg);
+    background-color: #f0f0f0;
+    margin-top: 30px;
+  }
+
+  .plusVertical {
+    width: 10px;
+    height: 70px;
+    background-color: #f0f0f0;
+    margin-top: -70px;
+  }
