@@ -50,7 +50,7 @@
   font-family: Caveat;
   color: #f0f0f0;
   width: 300px;
-  height: 80px;
+  max-height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,7 +62,8 @@
 }
 
 .cardDesc {
-  padding: 50px;
+  height: 190px;
+  padding: 0px 10px;
   font-size: 22pt;
   font-family: Caveat;
   color: #3c486b;

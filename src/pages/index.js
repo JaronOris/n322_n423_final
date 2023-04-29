@@ -21,7 +21,7 @@ export default function HomePage() {
             Look at your past blogs, or create new ones!
           </p>
         </div>
-        <div className={HomeStyle.card}>
+        <div onClick={firebase.loginUser} className={HomeStyle.card}>
           <h2 className={HomeStyle.cardTitle}>Login</h2>
           <p className={HomeStyle.cardDesc}>
             Login to your existing account, or sign up to start posting!
