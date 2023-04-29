@@ -1,49 +1,48 @@
 #navbar {
-    width: 100%;
-    height: 65px;
-    display: flex;
-    justify-content: space-between;
-    font-family: Caveat;
-    font-size: 22pt;
-    background-color: #3C486B
-
+  width: 100%;
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  font-family: Caveat;
+  font-size: 22pt;
+  background-color: #3c486b;
 }
 
 .logo img {
-    width: 200px;
-    height: 65px;
-    margin-left: 50px;
+  width: 200px;
+  height: 65px;
+  margin-left: 50px;
 }
 
-
 .links {
-    width: 600px;
-    margin-right: 50px;
+  width: 600px;
+  margin-right: 50px;
 }
 
 .links ul {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 10px;
 }
 
 .links a {
-    text-decoration: none;
-    color: #F0F0F0
+  text-decoration: none;
+  color: #f0f0f0;
 }
 
 .button {
-    width: 125px;
-    height: fit-content;
-    font-family: Caveat;
-    font-size: 22pt;
-    background-color: #F0F0F0;
-    color: #3C486B;
-    border: none;
-    border-radius: 100px;
+  width: 125px;
+  height: fit-content;
+  font-family: Caveat;
+  font-size: 22pt;
+  background-color: #f0f0f0;
+  color: #3c486b;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
 }
 
 .divider {
-    font-weight: 900;
+  font-weight: 900;
 }

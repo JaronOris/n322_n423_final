@@ -1,11 +1,13 @@
-import Link from 'next/link';
+import Link from "next/link";
 import { useRouter } from "next/router";
-import '@/styles/globals.css';
+import useFirebase from "@/useHooks/useFirebase";
+import "@/styles/globals.css";
 import NavStyle from "../styles/Navbar.module.css";
 import HomeStyle from "../styles/Home.module.css";
 
-
 export default function App({ Component, pageProps }) {
+  const firebase = useFirebase();
+
   return (
     <>
       <nav id={NavStyle.navbar}>
@@ -16,15 +18,25 @@ export default function App({ Component, pageProps }) {
           <ul>
             <li>
               <Link href="/">Home</Link>
-            </li> <span className={NavStyle.divider}>|</span>
-
+            </li>{" "}
+            <span className={NavStyle.divider}>|</span>
             <li>
               <Link href="/frontPage">Front Page</Link>
-            </li> <span className={NavStyle.divider}>|</span>
+            </li>{" "}
+            <span className={NavStyle.divider}>|</span>
             <li>
               <Link href="/userPosts">Posts</Link>
-            </li> <span className={NavStyle.divider}>|</span>
-            <button className={NavStyle.button}>Login</button>
+            </li>{" "}
+            <span className={NavStyle.divider}>|</span>
+            {firebase.currentUser.email ? (
+              <button className={NavStyle.button} onClick={firebase.logoutUser}>
+                Logout
+              </button>
+            ) : (
+              <button className={NavStyle.button} onClick={firebase.loginUser}>
+                Login
+              </button>
+            )}
           </ul>
         </div>
       </nav>
@@ -32,7 +44,6 @@ export default function App({ Component, pageProps }) {
       <div className={HomeStyle.contentPillar}>
         <Component {...pageProps} />
       </div>
-
     </>
-  )
+  );
 }
