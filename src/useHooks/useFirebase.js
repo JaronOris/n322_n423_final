@@ -53,5 +53,20 @@ export default function useFirebase() {
       }
       return blogsList;
     },
+    async addBlog(blogsInfo) {
+      const blogsSnapshot = await db.collection("blogs").add(blogsInfo);
+      return {
+        ...blogsInfo,
+        id: blogsSnapshot.id,
+      };
+    },
+    async removeBlog(blogId) {
+      await db.collection("blogs").doc(blogId).delete;
+      return {};
+    },
+    async getBlogById(blogId) {
+      const blogsSnapshot = await db.collection("blogs").doc(blogId).get();
+      return {};
+    },
   };
 }
