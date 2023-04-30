@@ -2,11 +2,12 @@ import React from "react";
 import UserStyle from "../styles/UserPosts.module.css";
 import useFirebase from "@/useHooks/useFirebase";
 import Message from "@/components/message";
+import useGlobalValues from "@/useHooks/useGlobalValues";
 
 export default function userPosts() {
   const firebase = useFirebase();
-  const [blogsList, setBlogsList] = React.useState([]);
-  const [error, setError] = React.useState("");
+  const [errorOld, setError] = React.useState("");
+  const { blogsList, update, error } = useGlobalValues();
 
   const blogsListComponents = blogsList.map((blog) => {
     return <li key={blog.id}>{blog.title}</li>;
@@ -17,13 +18,12 @@ export default function userPosts() {
       if (!firebase.currentUser.email)
         throw { code: "auth-failed", name: "Firebase Auth" };
       const blogs = await firebase.getBlogs();
-      setBlogsList(blogs);
-      setError("");
+      update({ blogsList: blogs, error: "" });
     } catch (e) {
       if (e.code === "auth-failed" && e.name === "Firebase Auth") {
-        setError(`${e.name} (${e.code}): You Need To Login!`);
+        update({ error: `${e.name} (${e.code}): You Need To Login!` });
       } else {
-        setError(e.toString());
+        update({ error: e.toString() });
       }
     }
   }

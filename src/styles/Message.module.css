@@ -2,6 +2,7 @@
   width: 90%;
   padding: 16px 16px 0px;
   border: solid 2px #000000;
+  cursor: pointer;
 }
 
 .error {

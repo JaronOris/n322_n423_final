@@ -1,5 +1,6 @@
 import React from "react";
 import MessageStyle from "../styles/Message.module.css";
+import useGlobalValues from "@/useHooks/useGlobalValues";
 
 /**
  * @typedef {Object} MessageProps
@@ -13,6 +14,7 @@ import MessageStyle from "../styles/Message.module.css";
  */
 
 export default function Message({ children, type }) {
+  const { update } = useGlobalValues();
   function getMessageClassNameByType() {
     if (type === "error") {
       return MessageStyle.error;
@@ -26,9 +28,13 @@ export default function Message({ children, type }) {
   const messageClasses = [MessageStyle.message];
   messageClasses.push(getMessageClassNameByType());
 
+  function clearMessage() {
+    update({ error: "" });
+  }
+
   return (
     <>
-      <div className={messageClasses.join(" ")}>
+      <div className={messageClasses.join(" ")} onClick={clearMessage}>
         <p>{children}</p>
       </div>
     </>
