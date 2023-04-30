@@ -10,6 +10,7 @@ import { GlobalProvider } from "@/useHooks/useGlobalValues";
 export default function App({ Component, pageProps }) {
   const initialGlobalValues = {
     blogsList: [],
+    blogsListLoadTime: 0,
     error: "",
   };
   const [globalValues, setGlobalValues] = React.useState(initialGlobalValues);
@@ -19,6 +20,11 @@ export default function App({ Component, pageProps }) {
   }
 
   const firebase = useFirebase();
+
+  async function clearGlobalValues() {
+    await firebase.logoutUser();
+    setGlobalValues(initialGlobalValues);
+  }
 
   return (
     <>
@@ -42,10 +48,7 @@ export default function App({ Component, pageProps }) {
               </li>{" "}
               <span className={NavStyle.divider}>|</span>
               {firebase.currentUser.email ? (
-                <button
-                  className={NavStyle.button}
-                  onClick={firebase.logoutUser}
-                >
+                <button className={NavStyle.button} onClick={clearGlobalValues}>
                   Logout
                 </button>
               ) : (
