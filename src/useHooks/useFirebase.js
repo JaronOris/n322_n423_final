@@ -66,7 +66,7 @@ export default function useFirebase() {
     },
     async getBlogById(blogId) {
       const blogsSnapshot = await db.collection("blogs").doc(blogId).get();
-      return {};
+      return [];
     },
   };
 }
